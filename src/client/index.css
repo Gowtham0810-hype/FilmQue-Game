@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* ─── Reddit-aligned Design System ───────────────────────────────────────── */
+
+:root {
+  --bg: #f4f6f8;
+  --ink: #1c1c1c;
+  --mute: #6a7480;
+  --line: #e3e6e8;
+  --line-subtle: #f0f2f4;
+  --line-strong: #cbd2d6;
+  --card-bg: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.94);
+  --white-surface: #ffffff;
+  --input-bg: #f8f9fa;
+  --reddit-orange: #ff4500;
+
+  --glow-primary: rgba(255, 69, 0, 0.08);
+  --glow-accent: rgba(0, 0, 0, 0.04);
+  --glow-green: rgba(16, 185, 129, 0.08);
+  --glow-amber: rgba(245, 158, 11, 0.08);
+  --glow-red: rgba(239, 68, 68, 0.08);
+}
+
+.dark {
+  --bg: #0e1113;
+  --ink: #f2f4f5;
+  --mute: #878a8c;
+  --line: #22272b;
+  --line-subtle: #181c1f;
+  --line-strong: #34383c;
+  --card-bg: #14171a;
+  --surface-glass: rgba(20, 23, 26, 0.95);
+  --white-surface: #181c1f;
+  --input-bg: #101214;
+  --reddit-orange: #ff4500;
+
+  --glow-primary: rgba(255, 69, 0, 0.15);
+  --glow-accent: rgba(255, 255, 255, 0.04);
+  --glow-green: rgba(52, 211, 153, 0.12);
+  --glow-amber: rgba(251, 191, 36, 0.12);
+  --glow-red: rgba(248, 113, 113, 0.12);
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+
+@layer base {
+  html,
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--reddit-orange);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--reddit-orange);
+    color: #ffffff;
+  }
+}
+
+/* ─── Cards and surfaces ─────────────────────────────────────────────────── */
+
+.glow-card {
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glow-card:hover {
+  border-color: var(--line-strong);
+}
+
+.dark .glow-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glow-card-active {
+  border: 1px solid var(--reddit-orange);
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
+
+.glow-btn {
+  transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+}
+
+.glow-btn:hover {
+  opacity: 0.9;
+}
+
+/* ─── Inputs ─────────────────────────────────────────────────────────────── */
+
+.glow-input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glow-input:focus-within {
+  border-color: var(--reddit-orange);
+  box-shadow: 0 0 0 1px var(--reddit-orange);
+}
+
+/* ─── Typography & Labels ────────────────────────────────────────────────── */
+
+.label-xs {
+  font-size: 11px;
+  line-height: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.label-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.hero-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd2d6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9aa4ab;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2d3236;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #464c52;
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
