@@ -25,6 +25,28 @@ Built as an interactive custom post for Reddit's Developer Platform (**Devvit**)
 
 ---
 
+## 📸 Screenshots & Video Demo
+
+<div align="center">
+
+### 📺 Watch the Gameplay Walkthrough
+[![FilmQue Video Demo](https://img.shields.io/badge/YouTube-Watch%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/qgBYEc3njbk)
+
+<p><em>Click the badge above or visit <a href="https://youtu.be/qgBYEc3njbk">https://youtu.be/qgBYEc3njbk</a> to watch the live gameplay walkthrough.</em></p>
+
+</div>
+
+<br/>
+
+| **In-Game Play Stage** | **Result Modal & Reddit Share** |
+| :---: | :---: |
+| <img src="assets/gameboard.png" alt="FilmQue GameBoard" width="460" /> | <img src="assets/result-modal.png" alt="FilmQue Result Modal" width="460" /> |
+| *Visual color barcode spectrum, clue reveal triggers, and guess input.* | *Round summary, all clues revealed, and 1-click Reddit comment share.* |
+
+---
+
+---
+
 ## 🎮 How the Game Works
 
 Players have unlimited tries to guess the mystery film, with points awarded based on when the film is solved:
